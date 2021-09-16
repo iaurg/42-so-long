@@ -1,8 +1,10 @@
 # 42-so-long
 
 [] Validate with norm
+
 [] All heap allocated memory space must be properly freed when necessary. No leaks
 will be tolerated
+
 [] The map will be constructed with 3 components walls, collectibles, and free space.
 
 
