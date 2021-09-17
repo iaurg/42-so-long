@@ -1,12 +1,15 @@
 # 42-so-long
 
-[] Validate with norm
+[ ] Validate with norm
 
-[] All heap allocated memory space must be properly freed when necessary. No leaks
+[ ] All heap allocated memory space must be properly freed when necessary. No leaks
 will be tolerated
 
-[] The map will be constructed with 3 components walls, collectibles, and free space.
+[ ] The map will be constructed with 3 components walls, collectibles, and free space.
 
+[ ] Validate map extension
+
+[ ] Validate map construction
 
 ## Allowed functions
 
