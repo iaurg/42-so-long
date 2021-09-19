@@ -31,20 +31,22 @@ $(NAME): ${LBFT_LIB} ${OBJECTS} ${MLX_LIB} ${MLX_HEADER} ${OBJECTS}
 	${MSG1}
 
 ${LBFT_LIB}:
-	${MAKE} -C ${LBFT_DIR}
+	@${MAKE} -C ${LBFT_DIR}
 
 ${MLX_LIB}:
-	${MAKE} -C ${MLX_DIR}
+	@${MAKE} -C ${MLX_DIR}
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
 	${RM}	${OBJECTS}
+	@${MAKE} fclean -C ${LBFT_DIR}
 	${MSG2}
 
 fclean: clean
 	${RM} ${NAME}
+	@${MAKE} fclean -C ${LBFT_DIR}
 
 run:
 	${MAKE} && ./so_long.a
