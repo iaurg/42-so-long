@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 07:38:35 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/19 12:03:43 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/09/19 16:32:54 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
+# define	BUFFER_SIZE 1
+char		*get_next_line(int fd);
+void		free_and_reset(void *var);
+ssize_t		read_line(char **holder, char **buffer, char **final_line, int fd);
+char		*split_line(char **holder);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
