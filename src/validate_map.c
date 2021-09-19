@@ -14,9 +14,22 @@ an error.
 extension.
 */
 
+static int is_valid_extension(char *map_file)
+{
+	char *ext;
+
+	if(!map_file)
+		return (0);
+	ext = ft_strrchr(map_file, '.');
+	if (ft_strncmp(ext, ".ber", 5) == 0)
+		return (1);
+	print_error("Invalid map extension");
+	return(0);
+}
+
 int	validate_map(char *map_file)
 {
-	printf("%s", map_file);
-	ft_putchar_fd('x', 1);
-	return(1); // 1 if is a valid map file
+	if(!is_valid_extension(map_file))
+		return (0); // 1 if is a valid map file
+	return (1);
 }

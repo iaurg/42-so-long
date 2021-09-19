@@ -35,8 +35,8 @@ int	main(int argc, char **argv)
 {
 	if (argc != 2)
 		return (print_error("Invalid number of arguments"));
-	if (validate_map(argv[1]))
-		return (print_error("Invalid map"));
+	if (!validate_map(argv[1]))
+		return (0);
 	// If mlx_init fails to set up the connection to the graphical system, it will return NULL, otherwise a non-null pointer is returned as a connection identifier.
 	// mlx = mlx_init();
 	// To calculate screen size get number of rows and columns x tiles size
