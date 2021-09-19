@@ -3,12 +3,14 @@ NAME = so_long
 HEADER_DIR = ./header
 
 SOURCE_DIR = ./src
-MLX_DIR = ./mlx
+MLX_DIR = ./libs/mlx
+LBFT_DIR = ./libs/libft
 
 MLX_HEADER = ${HEADER_DIR}/so_long.h
 MLX_LIB = ${MLX_DIR}/libmlx.a
+LBFT_LIB = ${LBFT_DIR}/libft.a
 
-SOURCES = ${SOURCE_DIR}/test.c ${SOURCE_DIR}/init.c
+SOURCES = ${SOURCE_DIR}/init.c ${SOURCE_DIR}/print_error.c ${SOURCE_DIR}/validate_map.c
 
 RM = @rm -f
 
@@ -22,11 +24,17 @@ OBJECTS = ${SOURCES:.c=.o}
 MSG1 = @echo "Compiled ✔︎"
 MSG2 = @echo "Cleaned ✔︎"
 
-all: 		${NAME}
+all: ${NAME}
 
-$(NAME): ${OBJECTS} ${MLX_LIB} ${MLX_HEADER} ${OBJECTS}
-	${CC} ${CFLAGS} ${OBJECTS} ${MLX_LIB} ${MLX_FLAGS}  -o ${NAME}
+$(NAME): ${LBFT_LIB} ${OBJECTS} ${MLX_LIB} ${MLX_HEADER} ${OBJECTS}
+	${CC} ${CFLAGS} ${OBJECTS} ${LBFT_LIB} ${MLX_LIB} ${MLX_FLAGS} -o ${NAME}
 	${MSG1}
+
+${LBFT_LIB}:
+	${MAKE} -C ${LBFT_DIR}
+
+${MLX_LIB}:
+	${MAKE} -C ${MLX_DIR}
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -38,7 +46,7 @@ clean:
 fclean: clean
 	${RM} ${NAME}
 
-run: 
+run:
 	${MAKE} && ./so_long.a
 	${MSG1}
 
