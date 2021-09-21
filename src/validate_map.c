@@ -1,7 +1,7 @@
 #include "../header/so_long.h"
 
 /*
-Validate map extension .ber
+Validate map extension .ber - OK
 Validate map walls
 Validate retangular map
 Validate map elements
@@ -27,9 +27,25 @@ static int is_valid_extension(char *map_file)
 	return(0);
 }
 
+static int is_valid_wall(char *map_file)
+{
+	int file_descriptor;
+	char *temp;
+
+	file_descriptor = open(map_file, O_RDONLY);
+	if(file_descriptor < 0)
+		return(NULL);
+	printf("%d", file_descriptor);
+	temp = get_next_line(file_descriptor);
+	printf("%s", temp);
+	free(temp);
+	print_error("Invalid map walls");
+	return(0);
+}
+
 int	validate_map(char *map_file)
 {
-	if(!is_valid_extension(map_file))
+	if(!is_valid_extension(map_file) || !is_valid_wall(map_file))
 		return (0); // 1 if is a valid map file
 	return (1);
 }
