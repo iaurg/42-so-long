@@ -33,12 +33,21 @@ static int is_valid_wall(char *map_file)
 	char *temp;
 
 	file_descriptor = open(map_file, O_RDONLY);
-	if(file_descriptor < 0)
-		return(NULL);
-	printf("%d", file_descriptor);
-	temp = get_next_line(file_descriptor);
-	printf("%s", temp);
-	free(temp);
+	if (file_descriptor < 0)
+	{
+		print_error("Fail to open map file");
+		return (0);
+	}
+	/*
+	How can I use split here? Separate each line in a array.
+	*/
+	while (1)
+	{
+		temp = get_next_line(file_descriptor);
+		printf("%s", temp);
+		free(temp);
+		if (!temp) break;
+	}
 	print_error("Invalid map walls");
 	return(0);
 }
