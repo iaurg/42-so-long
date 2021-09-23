@@ -30,13 +30,25 @@ int is_valid_extension(char *map_file)
 static int is_valid_wall(char **game_map)
 {
 	int i;
+	int total_lines;
 
 	i = 0;
+	total_lines = -1;
 	while(game_map[i])
 	{
-		printf("test: %s\n", game_map[i]);
+		// printf("test: %s\n", game_map[i]);
+		total_lines++;
 		i++;
 	}
+
+	i = 0;
+	while (game_map[0][i])
+		if (game_map[0][i++] != '1')
+			return (print_error("Invalid line"));
+	i = 0;
+	while (game_map[total_lines][i])
+		if (game_map[total_lines][i++] != '1')
+			return (print_error("Invalid line"));
 	return (print_error("Invalid map walls"));
 }
 
