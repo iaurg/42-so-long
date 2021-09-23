@@ -33,9 +33,15 @@ the map
 
 int	main(int argc, char **argv)
 {
+	t_game game;
+
 	if (argc != 2)
 		return (print_error("Invalid number of arguments"));
-	if (!validate_map(argv[1]))
+	if (!is_valid_extension(argv[1]))
+		return (0);
+	game.map = generate_map_array(argv[1]);
+
+	if (!validate_map(game))
 		return (0);
 	// If mlx_init fails to set up the connection to the graphical system, it will return NULL, otherwise a non-null pointer is returned as a connection identifier.
 	// mlx = mlx_init();

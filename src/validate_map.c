@@ -14,7 +14,7 @@ an error.
 extension.
 */
 
-static int is_valid_extension(char *map_file)
+int is_valid_extension(char *map_file)
 {
 	char *ext;
 
@@ -27,48 +27,22 @@ static int is_valid_extension(char *map_file)
 	return(0);
 }
 
-static char **generate_map_array(char *map_file)
+static int is_valid_wall(char **game_map)
 {
-	int file_descriptor;
-	char *temp;
-	char *map_string;
-	char *temp_map;
-
-	file_descriptor = open(map_file, O_RDONLY);
-	map_string = ft_strdup("");
-	while (1)
-	{
-		temp = get_next_line(file_descriptor);
-		temp_map = map_string;
-		if (temp)
-			map_string = ft_strjoin(temp_map, temp);
-		free(temp);
-		if (!temp) break;
-	}
-	return(ft_split(map_string, '\n'));
-}
-
-static int is_valid_wall(char *map_file)
-{
-	char **tst;
 	int i;
 
-	tst = generate_map_array(map_file);
 	i = 0;
-	while(tst[i])
+	while(game_map[i])
 	{
-		printf("test: %s\n", tst[i]);
+		printf("test: %s\n", game_map[i]);
 		i++;
 	}
+	return (print_error("Invalid map walls"));
+}
 
-	return(print_error("Invalid map walls"));
-}s
-
-int	validate_map(char *map_file)
+int	validate_map(t_game game)
 {
-	if(!is_valid_extension(map_file))
-		return (0); // 1 if is a valid map file
-	if(!is_valid_wall(map_file))
+	if(!is_valid_wall(game.map))
 		return (0); // 1 if is a valid map file
 	return (1);
 }
