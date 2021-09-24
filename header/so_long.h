@@ -11,13 +11,20 @@
 # define COIN_CHAR = 'C'
 # define EXIT_CHAR = 'E'
 
+typedef struct	s_map
+{
+	char	**map_array;
+	int		row;
+	int		col;
+}				t_map;
+
 typedef struct	s_game
 {
-	char **map;
+	t_map map;
 }				t_game;
 
 int	print_error(char *message);
-int	validate_map(t_game game);
+int	validate_map(t_game *game);
 int is_valid_extension(char *map_file);
 char **generate_map_array(char *map_file);
 #endif
