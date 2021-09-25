@@ -2,7 +2,7 @@
 
 /*
 Validate map extension .ber - OK
-Validate map walls
+Validate map walls - OK
 Validate retangular map
 Validate map elements
 
@@ -27,25 +27,33 @@ int is_valid_extension(char *map_file)
 	return(0);
 }
 
-static int is_valid_wall(t_game *game)
+static int	is_valid_wall(t_game *game)
 {
-	int i;
-	int total_row;
-	int total_col;
-	i = 0;
-	total_row = game->map.row;
-	total_col = game->map.col;
+	int	i;
+	int	row;
+	int	col;
+	int	lst_line;
 
+	i = 0;
+	row = game->map.row;
+	col = game->map.col;
+	lst_line = row - 1;
 	while (game->map.map_array[0][i])
 		if (game->map.map_array[0][i++] != '1')
 			return (print_error("Invalid line"));
 	i = 0;
-	while (game->map.map_array[total_row - 1][i])
-		if (game->map.map_array[total_row - 1][i++] != '1')
+	while (game->map.map_array[lst_line][i])
+		if (game->map.map_array[lst_line][i++] != '1')
 			return (print_error("Invalid line"));
-	printf("row: %d\n", total_row);
-	printf("col: %d\n", total_col);
-	return (print_error("Invalid map walls"));
+	i = 0;
+	while (i <= lst_line)
+	{
+		if (game->map.map_array[i][col - 1] != '1' ||
+			game->map.map_array[i][0] != '1')
+			return (print_error("Invalid line"));
+		i++;
+	}
+	return (1);
 }
 
 static int is_valid_rectangle(t_game *game)
@@ -55,11 +63,16 @@ static int is_valid_rectangle(t_game *game)
 	return(1);
 }
 
+static int is_valid_elements(t_game *game)
+{
+
+}
+
 static void count_map_sides(t_game *game)
 {
 	int total_row;
 	int total_col;
-	total_row = -1;
+	total_row = 0;
 	total_col = 0;
 
 	while (game->map.map_array[++total_row]);
