@@ -3,7 +3,7 @@
 /*
 Validate map extension .ber - OK
 Validate map walls - OK
-Validate retangular map
+Validate retangular map - OK
 Validate map elements - OK
 
 - The map must be rectangular
@@ -58,7 +58,7 @@ static int	is_valid_wall(t_game *game)
 
 static int is_valid_rectangle(t_game *game)
 {
-	if ((game->map.row <= 0) || (game->map.col <= 0))
+	if ((game->map.row < 5) || (game->map.col < 3))
 		return (print_error("Invalid map row or col"));
 	return(1);
 }
@@ -113,8 +113,8 @@ int	validate_map(t_game *game)
 {
 	count_map_sides(game);
 	if(!is_valid_wall(game)
-		|| !is_valid_rectangle(game)
-		|| !is_valid_elements(game))
+		|| !is_valid_elements(game)
+		|| !is_valid_rectangle(game))
 		return (0); // 1 if is a valid map file
 	return (1);
 }
