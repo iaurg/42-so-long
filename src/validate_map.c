@@ -63,9 +63,30 @@ static int is_valid_rectangle(t_game *game)
 	return(1);
 }
 
-static int is_valid_elements(t_game *game)
+static int	is_valid_elements(t_game *game)
 {
+	int	i;
+	int	j;
+	int	row;
+	int	col;
 
+	i = 0;
+	j = 0;
+	row = game->map.row;
+	col = game->map.col;
+
+	while(i < row)
+	{
+		while(j < col)
+		{
+			printf("%c", game->map.map_array[i][j]);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+
+	return(1);
 }
 
 static void count_map_sides(t_game *game)
@@ -84,7 +105,9 @@ static void count_map_sides(t_game *game)
 int	validate_map(t_game *game)
 {
 	count_map_sides(game);
-	if(!is_valid_wall(game) || !is_valid_rectangle(game))
+	if(!is_valid_wall(game)
+		|| !is_valid_rectangle(game)
+		|| !is_valid_elements(game))
 		return (0); // 1 if is a valid map file
 	return (1);
 }
