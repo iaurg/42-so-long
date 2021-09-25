@@ -5,11 +5,11 @@
 # include <unistd.h>
 # include "../libs/mlx/mlx.h"
 # include "../libs/libft/libft.h"
-# define PLAYER_CHAR = 'P'
-# define WALL_CHAR = '1'
-# define FREE_CHAR = '0'
-# define COIN_CHAR = 'C'
-# define EXIT_CHAR = 'E'
+# define PLAYER_CHAR 'P'
+# define WALL_CHAR '1'
+# define FREE_CHAR '0'
+# define COIN_CHAR 'C'
+# define EXIT_CHAR 'E'
 
 typedef struct	s_map
 {
