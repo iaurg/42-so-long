@@ -5,13 +5,7 @@ Validate map extension .ber - OK
 Validate map walls - OK
 Validate retangular map - OK
 Validate map elements - OK
-
-- The map must be rectangular
-- Map must have at least one exit, one collectible, and one starting position.
-- The map must be closed/surrounded by walls, if not the program must return
-an error.
-- Your program must take as a first argument a map description file with the .ber
-extension.
+Validate Map must have at least one exit, one collectible, and one starting position.
 */
 
 int is_valid_extension(char *map_file)
@@ -38,13 +32,14 @@ static int	is_valid_wall(t_game *game)
 	row = game->map.row;
 	col = game->map.col;
 	lst_line = row - 1;
-	while (game->map.map_array[0][i])
-		if (game->map.map_array[0][i++] != '1')
-			return (print_error("Invalid line"));
-	i = 0;
-	while (game->map.map_array[lst_line][i])
-		if (game->map.map_array[lst_line][i++] != '1')
-			return (print_error("Invalid line"));
+	while (game->map.map_array[0][i] && game->map.map_array[lst_line][i])
+	{
+		if (game->map.map_array[0][i] != '1')
+			return (print_error("Invalid wall"));
+		if (game->map.map_array[lst_line][i] != '1')
+			return (print_error("Invalid wall"));
+		i++;
+	}
 	i = 0;
 	while (i <= lst_line)
 	{
