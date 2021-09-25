@@ -5,7 +5,7 @@ Validate map extension .ber - OK
 Validate map walls - OK
 Validate retangular map - OK
 Validate map elements - OK
-Validate Map must have at least one exit, one collectible, and one starting position.
+Validate Map must have at E,C,P - OK
 */
 
 int is_valid_extension(char *map_file)
@@ -62,18 +62,16 @@ static int	is_valid_elements(t_game *game)
 {
 	int	i;
 	int	j;
-	int	row;
-	int	col;
+	int count_elements;
 	char element;
 
 	i = 0;
 	j = 0;
-	row = game->map.row;
-	col = game->map.col;
+	count_elements = 0;
 
-	while(i < row)
+	while(i < game->map.row)
 	{
-		while(j < col)
+		while(j < game->map.col)
 		{
 			element = game->map.map_array[i][j];
 			if (element != PLAYER_CHAR
@@ -83,11 +81,18 @@ static int	is_valid_elements(t_game *game)
 				&& element != EXIT_CHAR)
 				return(print_error("Invalid element in map"));
 			j++;
+			if(element == PLAYER_CHAR
+				|| element == COIN_CHAR
+				|| element == EXIT_CHAR)
+			{
+				count_elements++;
+			}
 		}
 		j = 0;
 		i++;
 	}
-
+	if (count_elements < 3)
+		return(print_error("Map must have at least one E, C, and one P"));
 	return(1);
 }
 
