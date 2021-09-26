@@ -1,13 +1,6 @@
 #include "../header/so_long.h"
 
 /*
-- Map components:
-walls = 1
-collectibles = C
-free space = 0
-exit map = E
-player start position = P
-
 - At every move the current number of movements must be displayed in the shell.
 
 - The player must be able to move: move_up(), move_down(), move_left(), move_right()
@@ -23,13 +16,19 @@ player start position = P
 quit the program cleanly.
 ◦ The use of images of the minilibX is strongly recommended.
 
-- You don’t need to check if there’s a valid path in the map.
-
 - You must be able to parse any kind of map, as long as it respects the rules of
 the map
 */
 
-// Get map as a first argument and validate .ber extension
+/*
+[x] Map components
+[x] Validate map extension .ber
+[x] Validate map walls
+[x] Validate retangular map
+[x] Validate map elements
+[x] You don’t need to check if there’s a valid path in the map.
+[x] Validate Map must have at least one exit, one collectible, and one starting position.
+*/
 
 int	main(int argc, char **argv)
 {
