@@ -11,7 +11,7 @@ MLX_LIB = ${MLX_DIR}/libmlx.a
 LBFT_LIB = ${LBFT_DIR}/libft.a
 
 SOURCES = ${SOURCE_DIR}/init.c ${SOURCE_DIR}/print_error.c ${SOURCE_DIR}/validate_map.c
-SOURCES += ${SOURCE_DIR}/game_init.c
+SOURCES += ${SOURCE_DIR}/map_init.c ${SOURCE_DIR}/game_init.c ${SOURCE_DIR}/key_hooks.c
 
 RM = @rm -f
 
