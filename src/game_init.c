@@ -1,22 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game_init.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/26 21:00:50 by itaureli          #+#    #+#             */
+/*   Updated: 2021/09/26 21:18:28 by itaureli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../header/so_long.h"
 
-char **generate_map_array(char *map_file)
+void	window_init(t_game *game)
 {
-	int file_descriptor;
-	char *temp;
-	char *map_string;
-	char *temp_map;
+	int width; //x
+	int height; //y
 
-	file_descriptor = open(map_file, O_RDONLY);
-	map_string = ft_strdup("");
-	while (1)
-	{
-		temp = get_next_line(file_descriptor);
-		temp_map = map_string;
-		if (temp)
-			map_string = ft_strjoin(temp_map, temp);
-		free(temp);
-		if (!temp) break;
-	}
-	return(ft_split(map_string, '\n'));
+	width = game->map.col * SPRITE_SIZE;
+	height = game->map.row * SPRITE_SIZE;
+	// If mlx_init fails to set up the connection to the graphical system, it will return NULL, otherwise a non-null pointer is returned as a connection identifier.
+	game->mlx = mlx_init();
+	// To calculate screen size get number of rows and columns x tiles size
+	game->screen = mlx_new_window(game->mlx, width, height, "so_long");
 }
