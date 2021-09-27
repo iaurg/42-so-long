@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
+/*   Updated: 2021/09/26 22:51:33 by itaureli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../header/so_long.h"
 
 /*
@@ -28,28 +40,26 @@ the map
 [x] Validate map elements
 [x] You don’t need to check if there’s a valid path in the map.
 [x] Validate Map must have at least one exit, one collectible, and one starting position.
+[x] Init window with right size
+[] Print sprites on screen
+[] Close window when click on "X"
+[x] Close window when hit ESC
 */
 
 int	main(int argc, char **argv)
 {
 	t_game game;
 
+	setbuf(stdout, NULL);
 	if (argc != 2)
 		return (print_error("Invalid number of arguments"));
 	if (!is_valid_extension(argv[1]))
 		return (0);
 	game.map.map_array = generate_map_array(argv[1]);
-
 	if (!validate_map(&game))
 		return (0);
-	// If mlx_init fails to set up the connection to the graphical system, it will return NULL, otherwise a non-null pointer is returned as a connection identifier.
-	// mlx = mlx_init();
-	// To calculate screen size get number of rows and columns x tiles size
-	//mlx_win = mlx_new_window(mlx, 300, 300, "so_long");
-
-	// mlx_put_image_to_window(mlx, mlx_win, img.img, 50, 50);
-	//mlx_loop(mlx);
+	window_init(&game);
+	key_hooks(&game);
+	mlx_loop(game.mlx);
 	return(0);
 }
-
-// gcc -Wall -Wextra -Werror -I mlx -L mlx -lmlx -framework OpenGL -framework AppKit ./src/main.c
