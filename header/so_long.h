@@ -10,6 +10,12 @@
 # define FREE_CHAR '0'
 # define COIN_CHAR 'C'
 # define EXIT_CHAR 'E'
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+# define KEY_ESC 65307
+# define SPRITE_SIZE 32
 
 typedef struct	s_map
 {
@@ -20,11 +26,15 @@ typedef struct	s_map
 
 typedef struct	s_game
 {
-	t_map map;
+	t_map	map;
+	void	*mlx;
+	void	*screen;
 }				t_game;
 
-int	print_error(char *message);
-int	validate_map(t_game *game);
-int is_valid_extension(char *map_file);
-char **generate_map_array(char *map_file);
+int		print_error(char *message);
+int		validate_map(t_game *game);
+int		is_valid_extension(char *map_file);
+char	**generate_map_array(char *map_file);
+void	window_init(t_game *game);
+int		key_hooks(t_game *game);
 #endif
