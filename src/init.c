@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/26 22:51:33 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/09/27 22:28:53 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	main(int argc, char **argv)
 		return (0);
 	window_init(&game);
 	key_hooks(&game);
+	img_init(&game);
 	mlx_loop(game.mlx);
 	return(0);
 }

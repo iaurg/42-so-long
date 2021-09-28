@@ -16,6 +16,11 @@
 # define KEY_D 100
 # define KEY_ESC 65307
 # define SPRITE_SIZE 32
+# define PLAYER_IMG "../assets/sprites/P.xpm"
+# define WALL_IMG "../assets/sprites/1.xpm"
+# define FREE_IMG "../assets/sprites/0.xpm"
+# define COIN_IMG "../assets/sprites/C.xpm"
+# define EXIT_IMG "../assets/sprites/E.xpm"
 
 typedef struct	s_map
 {
@@ -37,4 +42,5 @@ int		is_valid_extension(char *map_file);
 char	**generate_map_array(char *map_file);
 void	window_init(t_game *game);
 int		key_hooks(t_game *game);
+void	img_init(t_game *game);
 #endif
