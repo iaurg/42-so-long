@@ -6,13 +6,13 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:50:55 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/28 22:20:29 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/09/29 06:46:13 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
 
-void *load_img_file(t_game *game, char *file_path)
+static void	*load_img_file(t_game *game, char *file_path)
 {
 	void	*img;
 	int		img_width;
@@ -44,7 +44,7 @@ static void put_img(t_game *game, int x,int y)
 	mlx_put_image_to_window(game->mlx, game->screen, img, x * 32, y * 32);
 }
 
-void render_images(t_game *game)
+static void	render_images(t_game *game)
 {
 	int	y;
 	int	x;
@@ -69,13 +69,3 @@ void	img_init(t_game *game)
 	game->img.img_free = load_img_file(game, FREE_IMG);
 	render_images(game);
 }
-/*
-y
-|
-|
-|
-|
-|
-|
----------------- x
-*/
