@@ -21,6 +21,8 @@
 # define FREE_IMG "assets/sprites/0.xpm"
 # define COIN_IMG "assets/sprites/C.xpm"
 # define EXIT_IMG "assets/sprites/E.xpm"
+# define EVENT_KEY_PRESS	2
+# define EVENT_X_WIN_PRESS	17
 
 typedef struct	s_map
 {
