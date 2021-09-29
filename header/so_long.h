@@ -42,9 +42,9 @@ typedef struct	s_images
 
 typedef struct	s_game
 {
-	t_map	map;
-	void	*mlx;
-	void	*screen;
+	t_map		map;
+	void		*mlx;
+	void		*screen;
 	t_images	img;
 }				t_game;
 
