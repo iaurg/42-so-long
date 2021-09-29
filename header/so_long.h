@@ -29,11 +29,21 @@ typedef struct	s_map
 	int		col;
 }				t_map;
 
+typedef struct	s_images
+{
+	void	*img_coin;
+	void	*img_wall;
+	void	*img_player;
+	void	*img_free;
+	void	*img_exit;
+}				t_images;
+
 typedef struct	s_game
 {
 	t_map	map;
 	void	*mlx;
 	void	*screen;
+	t_images	img;
 }				t_game;
 
 int		print_error(char *message);
