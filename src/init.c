@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/28 21:42:37 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/09/29 06:42:01 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,12 @@ the map
 [x] You don’t need to check if there’s a valid path in the map.
 [x] Validate Map must have at least one exit, one collectible, and one starting position.
 [x] Init window with right size
-[] Print sprites on screen
-[] Close window when click on "X"
+[x] Print sprites on screen
+[x] Close window when click on "X"
 [x] Close window when hit ESC
+[] Move character (WASD)
+[] Collect coins
+[] Validate SIGSERV on game exit
 */
 
 int	main(int argc, char **argv)
