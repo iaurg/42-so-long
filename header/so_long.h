@@ -24,6 +24,12 @@
 # define EVENT_KEY_PRESS	2
 # define EVENT_X_WIN_PRESS	17
 
+typedef struct	s_player
+{
+	int		x;
+	int		y;
+}				t_player;
+
 typedef struct	s_map
 {
 	char	**map_array;
@@ -46,6 +52,7 @@ typedef struct	s_game
 	void		*mlx;
 	void		*screen;
 	t_images	img;
+	t_player	player;
 }				t_game;
 
 int		print_error(char *message);
@@ -54,6 +61,7 @@ int		is_valid_extension(char *map_file);
 char	**generate_map_array(char *map_file);
 void	window_init(t_game *game);
 int		key_hooks(t_game *game);
+void	move_elements(int keycode, t_game *game);
 void	img_init(t_game *game);
 int 	close_game(t_game *game);
 #endif
