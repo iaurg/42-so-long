@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/29 22:52:54 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/09/30 09:14:07 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 [] Validate SIGSERV on game exit (quit the program cleanly.)
 [] Check if all local functions are static
 [] Validate norminette
+[] Add header42
 
 Move
 [] Move character (WASD)
