@@ -6,31 +6,11 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/29 06:42:01 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/09/29 22:52:54 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
-
-/*
-- At every move the current number of movements must be displayed in the shell.
-
-- The player must be able to move: move_up(), move_down(), move_left(), move_right()
-
-- The game doesn’t need to be real-time.
-
-- player cannot move into walls.
-
-- The program displays the image in a window and respects the following rules:
-◦ The W, A, S, and D keys will be used to move the main character.
-◦ Pressing ESC must close the window and quit the program cleanly.
-◦ Clicking on the red cross on the window’s frame must close the window and
-quit the program cleanly.
-◦ The use of images of the minilibX is strongly recommended.
-
-- You must be able to parse any kind of map, as long as it respects the rules of
-the map
-*/
 
 /*
 [x] Map components
@@ -44,9 +24,17 @@ the map
 [x] Print sprites on screen
 [x] Close window when click on "X"
 [x] Close window when hit ESC
+[] Validate SIGSERV on game exit (quit the program cleanly.)
+[] Check if all local functions are static
+[] Validate norminette
+
+Move
 [] Move character (WASD)
+[] The player must be able to move: move_up(), move_down(), move_left(), move_right()
+[] Player cannot move into walls
 [] Collect coins
-[] Validate SIGSERV on game exit
+[] Allow exit into sprite E only if collected all C
+[] At every move the current number of movements must be displayed in the shell.
 */
 
 int	main(int argc, char **argv)
