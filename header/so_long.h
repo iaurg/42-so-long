@@ -55,4 +55,5 @@ char	**generate_map_array(char *map_file);
 void	window_init(t_game *game);
 int		key_hooks(t_game *game);
 void	img_init(t_game *game);
+int 	close_game(t_game *game);
 #endif
