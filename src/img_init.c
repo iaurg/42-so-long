@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:50:55 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/29 06:46:13 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/09/30 09:53:42 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ static void put_img(t_game *game, int x,int y)
 	img = NULL;
 	element = game->map.map_array[y][x];
 	if (element == PLAYER_CHAR)
+	{
 		img = game->img.img_player;
+		game->player.x = x;
+		game->player.y = y;
+	}
 	else if (element == WALL_CHAR)
 		img = game->img.img_wall;
 	else if (element == EXIT_CHAR)
@@ -64,8 +68,8 @@ void	img_init(t_game *game)
 {
 	game->img.img_wall = load_img_file(game, WALL_IMG);
 	game->img.img_coin = load_img_file(game, COIN_IMG);
-	game->img.img_player = load_img_file(game, PLAYER_IMG);
 	game->img.img_exit = load_img_file(game, EXIT_IMG);
 	game->img.img_free = load_img_file(game, FREE_IMG);
+	game->img.img_player = load_img_file(game, PLAYER_IMG);
 	render_images(game);
 }
