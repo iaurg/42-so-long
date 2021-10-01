@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 09:01:58 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/01 06:26:49 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/01 06:43:49 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ static void move_left(t_game *game)
 
 	py = game->player.y;
 	px = game->player.x;
-	if (game->map.map_array[py][px - 1] == WALL_CHAR)
-		return;
-	game->map.map_array[py][px - 1] = PLAYER_CHAR;
-	game->player.x = px - 1;
-	game->map.map_array[py][px] = FREE_CHAR;
+	if (game->map.map_array[py][px - 1] != WALL_CHAR)
+	{
+		game->map.map_array[py][px - 1] = PLAYER_CHAR;
+		game->player.x = px - 1;
+		game->map.map_array[py][px] = FREE_CHAR;
+	}
 	render_images(game);
 }
 
@@ -34,14 +35,12 @@ static void move_right(t_game *game)
 
 	py = game->player.y;
 	px = game->player.x;
-
-	if (game->map.map_array[py][px + 1] == WALL_CHAR)
-		return;
-	game->map.map_array[py][px + 1] = PLAYER_CHAR;
-	game->player.x = px + 1;
-	game->map.map_array[py][px] = FREE_CHAR;
-	if (game->map.map_array[py][px - 1] != WALL_CHAR)
-		game->map.map_array[py][px - 1] = FREE_CHAR;
+	if (game->map.map_array[py][px + 1] != WALL_CHAR)
+	{
+		game->map.map_array[py][px + 1] = PLAYER_CHAR;
+		game->player.x = px + 1;
+		game->map.map_array[py][px] = FREE_CHAR;
+	}
 	render_images(game);
 }
 
@@ -52,13 +51,12 @@ static void move_up(t_game *game)
 
 	py = game->player.y;
 	px = game->player.x;
-
-	if (game->map.map_array[py - 1][px] == WALL_CHAR)
-		return;
-	game->map.map_array[py - 1][px] = PLAYER_CHAR;
-	game->player.y = py - 1;
 	if (game->map.map_array[py - 1][px] != WALL_CHAR)
+	{
+		game->map.map_array[py - 1][px] = PLAYER_CHAR;
+		game->player.y = py - 1;
 		game->map.map_array[py][px] = FREE_CHAR;
+	}
 	render_images(game);
 }
 
@@ -69,13 +67,12 @@ static void move_down(t_game *game)
 
 	py = game->player.y;
 	px = game->player.x;
-
-	if (game->map.map_array[py + 1][px] == WALL_CHAR)
-		return;
-	game->map.map_array[py + 1][px] = PLAYER_CHAR;
-	game->player.y = py + 1;
 	if (game->map.map_array[py + 1][px] != WALL_CHAR)
+	{
+		game->map.map_array[py + 1][px] = PLAYER_CHAR;
+		game->player.y = py + 1;
 		game->map.map_array[py][px] = FREE_CHAR;
+	}
 	render_images(game);
 }
 
