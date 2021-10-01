@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/30 09:14:07 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/01 07:23:35 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@
 [] Add header42
 
 Move
-[] Move character (WASD)
-[] The player must be able to move: move_up(), move_down(), move_left(), move_right()
-[] Player cannot move into walls
+[x] Move character (WASD)
+[x] The player must be able to move: move_up(), move_down(), move_left(), move_right()
+[x] Player cannot move into walls
 [] Collect coins
 [] Allow exit into sprite E only if collected all C
 [] At every move the current number of movements must be displayed in the shell.
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 	if (!is_valid_extension(argv[1]))
 		return (0);
 	game.map.map_array = generate_map_array(argv[1]);
+	map_init(&game);
 	if (!validate_map(&game))
 		return (0);
 	window_init(&game);
