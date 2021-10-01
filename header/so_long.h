@@ -35,6 +35,9 @@ typedef struct	s_map
 	char	**map_array;
 	int		row;
 	int		col;
+	int		player_char;
+	int		coin_char;
+	int		exit_char;
 }				t_map;
 
 typedef struct	s_images
@@ -60,9 +63,12 @@ int		validate_map(t_game *game);
 int		is_valid_extension(char *map_file);
 char	**generate_map_array(char *map_file);
 void	window_init(t_game *game);
+void	map_init(t_game *game);
 int		key_hooks(t_game *game);
 void	move_elements(int keycode, t_game *game);
 void	img_init(t_game *game);
 int 	close_game(t_game *game);
 void	render_images(t_game *game);
+int		map_and_validate_elements(t_game *game);
+void	count_elements(t_game *game, char element);
 #endif
