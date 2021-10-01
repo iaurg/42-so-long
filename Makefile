@@ -13,7 +13,7 @@ LBFT_LIB = ${LBFT_DIR}/libft.a
 SOURCES = ${SOURCE_DIR}/init.c ${SOURCE_DIR}/print_error.c ${SOURCE_DIR}/validate_map.c
 SOURCES += ${SOURCE_DIR}/map_init.c ${SOURCE_DIR}/game_init.c ${SOURCE_DIR}/key_hooks.c
 SOURCES += ${SOURCE_DIR}/img_init.c ${SOURCE_DIR}/exit_game.c
-SOURCES += ${SOURCE_DIR}/move_elements.c
+SOURCES += ${SOURCE_DIR}/move_elements.c ${SOURCE_DIR}/map_and_validate_elements.c
 
 RM = @rm -f
 
