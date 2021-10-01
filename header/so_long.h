@@ -64,4 +64,5 @@ int		key_hooks(t_game *game);
 void	move_elements(int keycode, t_game *game);
 void	img_init(t_game *game);
 int 	close_game(t_game *game);
+void	render_images(t_game *game);
 #endif
