@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:47:00 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/01 06:47:02 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/01 07:24:48 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,11 @@ char **generate_map_array(char *map_file)
 	result = ft_split(map_string, '\n');
 	close(file_descriptor);
 	return (result);
+}
+
+void	map_init(t_game *game)
+{
+	game->map.coin_char = 0;
+	game->map.player_char = 0;
+	game->map.exit_char = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 20:34:48 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/25 20:39:25 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/01 07:14:05 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,9 @@ static int	is_valid_elements(t_game *game)
 {
 	int		i;
 	int		j;
-	int		count_elements;
 
 	i = 0;
 	j = 0;
-	count_elements = 0;
 	while (i < game->map.row)
 	{
 		while (j < game->map.col)
@@ -78,17 +76,12 @@ static int	is_valid_elements(t_game *game)
 				&& game->map.map_array[i][j] != FREE_CHAR
 				&& game->map.map_array[i][j] != EXIT_CHAR)
 				return (print_error("Invalid element in map"));
-			if (game->map.map_array[i][j] == PLAYER_CHAR
-				|| game->map.map_array[i][j] == COIN_CHAR
-				|| game->map.map_array[i][j] == EXIT_CHAR)
-				count_elements++;
+			count_elements(game, game->map.map_array[i][j]);
 			j++;
 		}
 		j = 0;
 		i++;
 	}
-	if (count_elements < 3)
-		return (print_error("Map must have at least one E, C, and one P"));
 	return (1);
 }
 
@@ -111,7 +104,8 @@ int	validate_map(t_game *game)
 {
 	count_map_sides (game);
 	if (!is_valid_wall(game)
-		|| !is_valid_elements(game))
+		|| !is_valid_elements(game)
+		|| !map_and_validate_elements(game))
 		return (0);
 	return (1);
 }
