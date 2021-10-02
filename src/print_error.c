@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:44:55 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/26 22:44:57 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 08:59:45 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ of your choice.
 int	print_error(char *message)
 {
 	printf("Error\n %s", message);
-	return(0);
+	return (0);
 }

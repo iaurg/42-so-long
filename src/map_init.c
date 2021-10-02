@@ -6,13 +6,13 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:47:00 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 08:34:01 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 08:58:39 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
 
-char **generate_map_array(char *map_file)
+char	**generate_map_array(char *map_file)
 {
 	int		file_descriptor;
 	char	*temp;
@@ -25,7 +25,8 @@ char **generate_map_array(char *map_file)
 	while (1)
 	{
 		temp = get_next_line(file_descriptor);
-		if (!temp) break;
+		if (!temp)
+			break ;
 		temp_map = map_string;
 		map_string = ft_strjoin(temp_map, temp);
 		free(temp);

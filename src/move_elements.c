@@ -6,35 +6,34 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 09:01:58 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 08:46:17 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 08:59:38 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
 
-static void play_step(t_game *game)
+static void	play_step(t_game *game)
 {
 	render_images(game);
 	game->player.count_steps++;
 	printf("Steps taken: %d\n", game->player.count_steps);
 }
 
-static void move_player(t_game *game, int next_x, int next_y)
+static void	move_player(t_game *game, int next_x, int next_y)
 {
-	int py;
-	int px;
+	int	py;
+	int	px;
 
 	py = game->player.y;
 	px = game->player.x;
 	if (game->map.map_array[next_y][next_x] != WALL_CHAR)
 	{
-
 		if (game->map.map_array[next_y][next_x] == EXIT_CHAR
 			&& game->player.count_coins == game->map.coin_char)
 			game->finished = 1;
 		if (game->map.map_array[next_y][next_x] == EXIT_CHAR
 			&& game->player.count_coins != game->map.coin_char)
-			return;
+			return ;
 		if (game->map.map_array[next_y][next_x] == COIN_CHAR)
 			game->player.count_coins++;
 		game->map.map_array[next_y][next_x] = PLAYER_CHAR;
@@ -44,11 +43,11 @@ static void move_player(t_game *game, int next_x, int next_y)
 	}
 }
 
-static void unlock_exit(t_game *game)
+static void	unlock_exit(t_game *game)
 {
-	void *img;
-	int ex;
-	int ey;
+	void	*img;
+	int		ex;
+	int		ey;
 
 	img = NULL;
 	ex = game->map.exit_x;
@@ -59,8 +58,8 @@ static void unlock_exit(t_game *game)
 
 void	move_elements(int keycode, t_game *game)
 {
-	int py;
-	int px;
+	int	py;
+	int	px;
 
 	py = game->player.y;
 	px = game->player.x;
@@ -75,5 +74,5 @@ void	move_elements(int keycode, t_game *game)
 	if (game->player.count_coins == game->map.coin_char)
 		unlock_exit(game);
 	if (!game)
-		return;
+		return ;
 }

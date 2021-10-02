@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/02 09:01:50 by itaureli          #+#    #+#             */
+/*   Updated: 2021/10/02 09:01:53 by itaureli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include <stdio.h>
@@ -25,7 +37,7 @@
 # define EVENT_KEY_PRESS	2
 # define EVENT_X_WIN_PRESS	17
 
-typedef struct	s_player
+typedef struct s_player
 {
 	int		x;
 	int		y;
@@ -33,7 +45,7 @@ typedef struct	s_player
 	int		count_coins;
 }				t_player;
 
-typedef struct	s_map
+typedef struct s_map
 {
 	char	**map_array;
 	int		row;
@@ -45,7 +57,7 @@ typedef struct	s_map
 	int		exit_y;
 }				t_map;
 
-typedef struct	s_images
+typedef struct s_images
 {
 	void	*img_coin;
 	void	*img_wall;
@@ -55,7 +67,7 @@ typedef struct	s_images
 	void	*img_exit2;
 }				t_images;
 
-typedef struct	s_game
+typedef struct s_game
 {
 	t_map		map;
 	void		*mlx;
@@ -74,7 +86,7 @@ void	map_init(t_game *game);
 int		key_hooks(t_game *game);
 void	move_elements(int keycode, t_game *game);
 void	img_init(t_game *game);
-int 	close_game(t_game *game);
+int		close_game(t_game *game);
 void	render_images(t_game *game);
 int		map_and_validate_elements(t_game *game);
 void	count_elements(t_game *game, char element);

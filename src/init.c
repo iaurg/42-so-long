@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/01 21:43:32 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 08:57:12 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 [x] Validate retangular map
 [x] Validate map elements
 [x] You don’t need to check if there’s a valid path in the map.
-[x] Validate Map must have at least one exit, one collectible, and one starting position.
+[x] Validate Map at least one exit, one collectible, one starting position.
 [x] Init window with right size
 [x] Print sprites on screen
 [x] Close window when click on "X"
@@ -31,7 +31,7 @@
 
 Move
 [x] Move character (WASD)
-[x] The player must be able to move: move_up(), move_down(), move_left(), move_right()
+[x] The player must be able to move up,down,left,right
 [x] Player cannot move into walls
 [x] Count coins
 [x] Show steps on terminal
@@ -42,7 +42,7 @@ Move
 
 int	main(int argc, char **argv)
 {
-	t_game game;
+	t_game	game;
 
 	setbuf(stdout, NULL);
 	if (argc != 2)
@@ -57,5 +57,5 @@ int	main(int argc, char **argv)
 	img_init(&game);
 	key_hooks(&game);
 	mlx_loop(game.mlx);
-	return(0);
+	return (0);
 }

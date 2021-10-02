@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:50:55 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 07:27:25 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 08:56:29 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	*load_img_file(t_game *game, char *file_path)
 {
 	void	*img;
 	int		img_width;
-	int 	img_height;
+	int		img_height;
 
 	img = mlx_xpm_file_to_image(game->mlx, file_path, &img_width, &img_height);
 	if (!img)
@@ -24,10 +24,10 @@ static void	*load_img_file(t_game *game, char *file_path)
 	return (img);
 }
 
-static void put_img(t_game *game, int x,int y)
+static void	put_img(t_game *game, int x, int y)
 {
-	void *img;
-	char element;
+	void	*img;
+	char	element;
 
 	img = NULL;
 	element = game->map.map_array[y][x];
@@ -65,7 +65,6 @@ void	render_images(t_game *game)
 			put_img(game, x++, y);
 		y++;
 	}
-
 }
 
 void	img_init(t_game *game)
