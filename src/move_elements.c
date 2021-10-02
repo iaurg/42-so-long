@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 09:01:58 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/01 22:05:01 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 08:38:19 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ static void move_player(t_game *game, int next_x, int next_y)
 	px = game->player.x;
 	if (game->map.map_array[next_y][next_x] != WALL_CHAR)
 	{
+
+		if (game->map.map_array[next_y][next_x] == EXIT_CHAR
+			&& game->player.count_coins == game->map.coin_char)
+			game->finished = 1;
 		if (game->map.map_array[next_y][next_x] == EXIT_CHAR
 			&& game->player.count_coins != game->map.coin_char)
 			return;
@@ -39,6 +43,19 @@ static void move_player(t_game *game, int next_x, int next_y)
 		game->map.map_array[py][px] = FREE_CHAR;
 		play_step(game);
 	}
+}
+
+static void unlock_exit(t_game *game)
+{
+	void *img;
+	int ex;
+	int ey;
+
+	img = NULL;
+	ex = game->map.exit_x;
+	ey = game->map.exit_y;
+	img = game->img.img_exit;
+	mlx_put_image_to_window(game->mlx, game->screen, img, ex * 32, ey * 32);
 }
 
 void	move_elements(int keycode, t_game *game)
@@ -56,6 +73,8 @@ void	move_elements(int keycode, t_game *game)
 		move_player(game, px, py - 1);
 	else if (keycode == KEY_S)
 		move_player(game, px, py + 1);
+	if (game->player.count_coins == game->map.coin_char)
+		unlock_exit(game);
 	if (!game)
 		return;
 }
