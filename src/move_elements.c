@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 09:01:58 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 08:38:19 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 08:46:17 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static void play_step(t_game *game)
 	render_images(game);
 	game->player.count_steps++;
 	printf("Steps taken: %d\n", game->player.count_steps);
-	printf("Coins taken: %d\n", game->player.count_coins);
 }
 
 static void move_player(t_game *game, int next_x, int next_y)
