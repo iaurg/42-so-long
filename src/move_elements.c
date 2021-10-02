@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 09:01:58 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/01 21:29:09 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/01 22:05:01 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,67 +17,25 @@ static void play_step(t_game *game)
 	render_images(game);
 	game->player.count_steps++;
 	printf("Steps taken: %d\n", game->player.count_steps);
+	printf("Coins taken: %d\n", game->player.count_coins);
 }
 
-static void move_left(t_game *game)
+static void move_player(t_game *game, int next_x, int next_y)
 {
 	int py;
 	int px;
 
 	py = game->player.y;
 	px = game->player.x;
-	if (game->map.map_array[py][px - 1] != WALL_CHAR)
+	if (game->map.map_array[next_y][next_x] != WALL_CHAR)
 	{
-		game->map.map_array[py][px - 1] = PLAYER_CHAR;
-		game->player.x = px - 1;
-		game->map.map_array[py][px] = FREE_CHAR;
-		play_step(game);
-	}
-}
-
-static void move_right(t_game *game)
-{
-	int py;
-	int px;
-
-	py = game->player.y;
-	px = game->player.x;
-	if (game->map.map_array[py][px + 1] != WALL_CHAR)
-	{
-		game->map.map_array[py][px + 1] = PLAYER_CHAR;
-		game->player.x = px + 1;
-		game->map.map_array[py][px] = FREE_CHAR;
-		play_step(game);
-	}
-}
-
-static void move_up(t_game *game)
-{
-	int py;
-	int px;
-
-	py = game->player.y;
-	px = game->player.x;
-	if (game->map.map_array[py - 1][px] != WALL_CHAR)
-	{
-		game->map.map_array[py - 1][px] = PLAYER_CHAR;
-		game->player.y = py - 1;
-		game->map.map_array[py][px] = FREE_CHAR;
-		play_step(game);
-	}
-}
-
-static void move_down(t_game *game)
-{
-	int py;
-	int px;
-
-	py = game->player.y;
-	px = game->player.x;
-	if (game->map.map_array[py + 1][px] != WALL_CHAR)
-	{
-		game->map.map_array[py + 1][px] = PLAYER_CHAR;
-		game->player.y = py + 1;
+		if (game->map.map_array[next_y][next_x] == EXIT_CHAR
+			&& game->player.count_coins != game->map.coin_char)
+			return;
+		if (game->map.map_array[next_y][next_x] == COIN_CHAR)
+			game->player.count_coins++;
+		game->map.map_array[next_y][next_x] = PLAYER_CHAR;
+		game->player.x = next_x;
 		game->map.map_array[py][px] = FREE_CHAR;
 		play_step(game);
 	}
@@ -85,14 +43,19 @@ static void move_down(t_game *game)
 
 void	move_elements(int keycode, t_game *game)
 {
+	int py;
+	int px;
+
+	py = game->player.y;
+	px = game->player.x;
 	if (keycode == KEY_A)
-		move_left(game);
+		move_player(game, px - 1, py);
 	else if (keycode == KEY_D)
-		move_right(game);
+		move_player(game, px + 1, py);
 	else if (keycode == KEY_W)
-		move_up(game);
+		move_player(game, px, py - 1);
 	else if (keycode == KEY_S)
-		move_down(game);
+		move_player(game, px, py + 1);
 	if (!game)
 		return;
 }
