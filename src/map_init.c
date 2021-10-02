@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:47:00 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/01 21:14:57 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 08:34:01 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ void	map_init(t_game *game)
 	game->map.exit_char = 0;
 	game->player.count_steps = 0;
 	game->player.count_coins = 0;
+	game->finished = 0;
 }
