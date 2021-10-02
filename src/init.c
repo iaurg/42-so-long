@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 09:19:44 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 12:41:16 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ Move
 [x] Show steps on terminal
 [x] Collect coins
 [x] At every move the current number of movements must be displayed in the shell.
-[] Allow exit into sprite E only if collected all C
-[] Validate invalid_map_wall map
+[x] Allow exit into sprite E only if collected all C
+[x] Validate invalid_map_wall map
 */
 
 int	main(int argc, char **argv)
