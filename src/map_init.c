@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:47:00 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 13:49:19 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 16:25:09 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	**generate_map_array(char *map_file)
 	char	**result;
 
 	file_descriptor = open(map_file, O_RDONLY);
+	if (file_descriptor == -1)
+		return (NULL);
 	map_string = ft_strdup("");
 	while (1)
 	{
@@ -34,7 +36,6 @@ char	**generate_map_array(char *map_file)
 	}
 	result = ft_split(map_string, '\n');
 	free_and_reset(map_string);
-	map_string = NULL;
 	close(file_descriptor);
 	return (result);
 }
