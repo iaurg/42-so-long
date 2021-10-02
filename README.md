@@ -22,13 +22,13 @@
 
 - [x] Close window when hit ESC
 
-- [] Validate SIGSERV on game exit (quit the program cleanly.)
+- [ ] Validate SIGSERV on game exit (quit the program cleanly.)
 
-- [] Check if all local functions are static
+- [ ] Check if all local functions are static
 
-- [] Validate norminette
+- [ ] Validate norminette
 
-- [] Add header42
+- [ ] Add header42
 
 Move
 
