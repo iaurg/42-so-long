@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/01 20:57:53 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/01 21:32:02 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ Move
 [x] Move character (WASD)
 [x] The player must be able to move: move_up(), move_down(), move_left(), move_right()
 [x] Player cannot move into walls
+[x] Count coins
+[x] Show steps on terminal
 [] Collect coins
-[] Count coins
-[] Show steps on terminal
 [] Allow exit into sprite E only if collected all C
-[] At every move the current number of movements must be displayed in the shell.
+[x] At every move the current number of movements must be displayed in the shell.
 */
 
 int	main(int argc, char **argv)

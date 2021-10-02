@@ -28,6 +28,8 @@ typedef struct	s_player
 {
 	int		x;
 	int		y;
+	int		count_steps;
+	int		count_coins;
 }				t_player;
 
 typedef struct	s_map
