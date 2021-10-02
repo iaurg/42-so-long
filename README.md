@@ -1,53 +1,54 @@
 # 42-so-long
 
-[x] Map components
+- [x] Map components
 
-[x] Validate map extension .ber
+- [x] Validate map extension .ber
 
-[x] Validate map walls
+- [x] Validate map walls
 
-[x] Validate retangular map
+- [x] Validate retangular map
 
-[x] Validate map elements
+- [x] Validate map elements
 
-[x] You don’t need to check if there’s a valid path in the map.
+- [x] You don’t need to check if there’s a valid path in the map.
 
-[x] Validate Map at least one exit, one collectible, one starting position.
+- [x] Validate Map at least one exit, one collectible, one starting position.
 
-[x] Init window with right size
+- [x] Init window with right size
 
-[x] Print sprites on screen
+- [x] Print sprites on screen
 
-[x] Close window when click on "X"
+- [x] Close window when click on "X"
 
-[x] Close window when hit ESC
+- [x] Close window when hit ESC
 
-[] Validate SIGSERV on game exit (quit the program cleanly.)
+- [] Validate SIGSERV on game exit (quit the program cleanly.)
 
-[] Check if all local functions are static
+- [] Check if all local functions are static
 
-[] Validate norminette
+- [] Validate norminette
 
-[] Add header42
+- [] Add header42
 
 Move
-[x] Move character (WASD)
 
-[x] The player must be able to move up,down,left,right
+- [x] Move character (WASD)
 
-[x] Player cannot move into walls
+- [x] The player must be able to move up,down,left,right
 
-[x] Count coins
+- [x] Player cannot move into walls
 
-[x] Show steps on terminal
+- [x] Count coins
 
-[x] Collect coins
+- [x] Show steps on terminal
 
-[x] At every move the current number of movements must be displayed in the shell.
+- [x] Collect coins
 
-[x] Allow exit into sprite E only if collected all C
+- [x] At every move the current number of movements must be displayed in the shell.
 
-[x] Validate invalid_map_wall map
+- [x] Allow exit into sprite E only if collected all C
+
+- [x] Validate invalid_map_wall map
 
 
 ## Allowed functions
