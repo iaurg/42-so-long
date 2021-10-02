@@ -21,6 +21,7 @@
 # define FREE_IMG "assets/sprites/0.xpm"
 # define COIN_IMG "assets/sprites/C.xpm"
 # define EXIT_IMG "assets/sprites/E.xpm"
+# define EXIT2_IMG "assets/sprites/E2.xpm"
 # define EVENT_KEY_PRESS	2
 # define EVENT_X_WIN_PRESS	17
 
@@ -40,6 +41,8 @@ typedef struct	s_map
 	int		player_char;
 	int		coin_char;
 	int		exit_char;
+	int		exit_x;
+	int		exit_y;
 }				t_map;
 
 typedef struct	s_images
@@ -49,6 +52,7 @@ typedef struct	s_images
 	void	*img_player;
 	void	*img_free;
 	void	*img_exit;
+	void	*img_exit2;
 }				t_images;
 
 typedef struct	s_game
@@ -56,6 +60,7 @@ typedef struct	s_game
 	t_map		map;
 	void		*mlx;
 	void		*screen;
+	int			finished;
 	t_images	img;
 	t_player	player;
 }				t_game;
