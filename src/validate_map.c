@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 20:34:48 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/01 07:14:05 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 12:34:20 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,25 +85,32 @@ static int	is_valid_elements(t_game *game)
 	return (1);
 }
 
-static void	count_map_sides(t_game *game)
+static int	count_map_sides(t_game *game)
 {
 	int	total_row;
 	int	total_col;
+	int	total_lst_col;
 
 	total_row = 0;
 	total_col = 0;
+	total_lst_col = 0;
 	while (game->map.map_array[++total_row])
 		;
 	while (game->map.map_array[0][++total_col])
 		;
+	while (game->map.map_array[total_row - 1][++total_lst_col])
+		;
+	if(total_col != total_lst_col)
+		return (print_error("Invalid wall"));
 	game->map.row = total_row;
 	game->map.col = total_col;
+	return (1);
 }
 
 int	validate_map(t_game *game)
 {
-	count_map_sides (game);
-	if (!is_valid_wall(game)
+	if (!count_map_sides (game)
+		||!is_valid_wall(game)
 		|| !is_valid_elements(game)
 		|| !map_and_validate_elements(game))
 		return (0);
