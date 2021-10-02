@@ -1,31 +1,54 @@
 # 42-so-long
 
 [x] Map components
+
 [x] Validate map extension .ber
+
 [x] Validate map walls
+
 [x] Validate retangular map
+
 [x] Validate map elements
+
 [x] You don’t need to check if there’s a valid path in the map.
+
 [x] Validate Map at least one exit, one collectible, one starting position.
+
 [x] Init window with right size
+
 [x] Print sprites on screen
+
 [x] Close window when click on "X"
+
 [x] Close window when hit ESC
+
 [] Validate SIGSERV on game exit (quit the program cleanly.)
+
 [] Check if all local functions are static
+
 [] Validate norminette
+
 [] Add header42
 
 Move
 [x] Move character (WASD)
+
 [x] The player must be able to move up,down,left,right
+
 [x] Player cannot move into walls
+
 [x] Count coins
+
 [x] Show steps on terminal
+
 [x] Collect coins
+
 [x] At every move the current number of movements must be displayed in the shell.
+
 [x] Allow exit into sprite E only if collected all C
+
 [x] Validate invalid_map_wall map
+
 
 ## Allowed functions
 
