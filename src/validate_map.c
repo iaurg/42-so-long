@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 20:34:48 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 12:34:20 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 17:02:44 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ static int	count_map_sides(t_game *game)
 		;
 	while (game->map.map_array[total_row - 1][++total_lst_col])
 		;
-	if(total_col != total_lst_col)
+	if (total_col != total_lst_col)
 		return (print_error("Invalid wall"));
 	game->map.row = total_row;
 	game->map.col = total_col;

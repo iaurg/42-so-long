@@ -6,17 +6,18 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 22:30:48 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 16:44:08 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/02 17:03:13 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
 
-void free_map(char **map_array)
+static void	free_map(char **map_array)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	while(map_array[i])
+	while (map_array[i])
 		free_and_reset(map_array[i++]);
 	free_and_reset(map_array);
 }
