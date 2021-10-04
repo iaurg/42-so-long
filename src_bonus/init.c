@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/04 06:27:40 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/04 06:49:15 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ Move
 [x] At every move the current number of movements must be displayed in the shell.
 [x] Allow exit into sprite E only if collected all C
 [x] Validate invalid_map_wall map
-[] mlx_loop_hook + contador de tempo para alternar as animações
+[] mlx_loop_hook + time counter to change animations
+[] Add coin spinning animation
 */
 
 int	main(int argc, char **argv)
