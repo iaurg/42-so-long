@@ -6,11 +6,11 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 07:04:51 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/01 21:07:32 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/06 06:47:51 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/so_long_bonus.h"
 
 void	count_elements(t_game *game, char element)
 {

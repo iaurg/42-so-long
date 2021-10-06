@@ -6,11 +6,11 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:47:00 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 16:25:09 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/06 06:47:51 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/so_long_bonus.h"
 
 char	**generate_map_array(char *map_file)
 {

@@ -6,11 +6,11 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 21:00:50 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/29 06:44:31 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/06 06:47:51 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/so_long_bonus.h"
 
 void	window_init(t_game *game)
 {

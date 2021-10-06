@@ -6,11 +6,11 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:50:55 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 08:56:29 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/06 06:47:51 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/so_long_bonus.h"
 
 static void	*load_img_file(t_game *game, char *file_path)
 {
