@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 09:01:50 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/04 06:37:40 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/06 06:50:29 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_map
 	char	**map_array;
 	int		row;
 	int		col;
+	int		loop;
 	int		player_char;
 	int		coin_char;
 	int		exit_char;
@@ -90,4 +91,7 @@ int		close_game(t_game *game);
 void	render_images(t_game *game);
 int		map_and_validate_elements(t_game *game);
 void	count_elements(t_game *game, char element);
+
+void animate(t_game *game);
+int animate_coin(t_game *game);
 #endif

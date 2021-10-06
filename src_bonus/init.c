@@ -6,11 +6,9 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/04 06:49:15 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/06 06:48:46 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../header/so_long.h"
 
 /*
 [x] Map components
@@ -43,6 +41,8 @@ Move
 [] Add coin spinning animation
 */
 
+#include "../header/so_long_bonus.h"
+
 int	main(int argc, char **argv)
 {
 	t_game	game;
@@ -59,6 +59,7 @@ int	main(int argc, char **argv)
 	window_init(&game);
 	img_init(&game);
 	key_hooks(&game);
+	animate(&game);
 	mlx_loop(game.mlx);
 	return (0);
 }

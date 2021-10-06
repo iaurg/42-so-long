@@ -23,6 +23,7 @@ SOURCES_BONUS_FILES = init.c print_error.c validate_map.c
 SOURCES_BONUS_FILES += map_init.c game_init.c key_hooks.c
 SOURCES_BONUS_FILES += img_init.c exit_game.c
 SOURCES_BONUS_FILES += move_elements.c map_and_validate_elements.c
+SOURCES_BONUS_FILES += animate_hook.c animate_coin.c
 
 RM = @rm -f
 
