@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 12:41:16 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/06 21:59:46 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 [] Check if all local functions are static
 [] Validate norminette
 [] Add header42
+[] Note the logic inside readme for future read
 
 Move
 [x] Move character (WASD)
