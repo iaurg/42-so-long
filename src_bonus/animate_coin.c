@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 06:45:03 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/06 06:47:51 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/07 22:31:45 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 int animate_coin(t_game *game)
 {
-	printf("roda");
+	game->map.timer++;
+	if(game->map.timer % 2 == 0)
+		game->img.img_coin = load_img_file(game, COIN_IMG);
+	else
+		game->img.img_coin = load_img_file(game, COIN2_IMG);
 	render_images(game);
 	return 0;
 }
