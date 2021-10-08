@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 09:01:50 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/06 06:50:29 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/07 22:30:00 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@
 # define WALL_IMG "assets/sprites/1.xpm"
 # define FREE_IMG "assets/sprites/0.xpm"
 # define COIN_IMG "assets/sprites/C.xpm"
+# define COIN2_IMG "assets/sprites/C2.xpm"
+# define COIN3_IMG "assets/sprites/C3.xpm"
+# define COIN4_IMG "assets/sprites/C4.xpm"
 # define EXIT_IMG "assets/sprites/E.xpm"
 # define EXIT2_IMG "assets/sprites/E2.xpm"
 # define EVENT_KEY_PRESS	2
@@ -50,7 +53,7 @@ typedef struct s_map
 	char	**map_array;
 	int		row;
 	int		col;
-	int		loop;
+	int		timer;
 	int		player_char;
 	int		coin_char;
 	int		exit_char;
@@ -92,6 +95,7 @@ void	render_images(t_game *game);
 int		map_and_validate_elements(t_game *game);
 void	count_elements(t_game *game, char element);
 
-void animate(t_game *game);
-int animate_coin(t_game *game);
+void	*load_img_file(t_game *game, char *file_path);
+void	animate(t_game *game);
+int		animate_coin(t_game *game);
 #endif
