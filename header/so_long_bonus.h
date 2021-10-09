@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 09:01:50 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/07 22:30:00 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/09 11:34:05 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,10 @@ typedef struct s_map
 	int		row;
 	int		col;
 	int		timer;
+	int		frame;
 	int		player_char;
 	int		coin_char;
 	int		exit_char;
-	int		exit_x;
-	int		exit_y;
 }				t_map;
 
 typedef struct s_images
@@ -68,7 +67,6 @@ typedef struct s_images
 	void	*img_player;
 	void	*img_free;
 	void	*img_exit;
-	void	*img_exit2;
 }				t_images;
 
 typedef struct s_game
