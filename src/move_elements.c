@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 09:01:58 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 08:59:38 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/09 20:15:18 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ static void	move_player(t_game *game, int next_x, int next_y)
 	{
 		if (game->map.map_array[next_y][next_x] == EXIT_CHAR
 			&& game->player.count_coins == game->map.coin_char)
+		{
+			mlx_destroy_image(game->mlx, game->img.img_player);
+			game->img.img_player = load_img_file(game, EXIT_IMG);
 			game->finished = 1;
+		}
 		if (game->map.map_array[next_y][next_x] == EXIT_CHAR
 			&& game->player.count_coins != game->map.coin_char)
 			return ;
@@ -45,15 +49,9 @@ static void	move_player(t_game *game, int next_x, int next_y)
 
 static void	unlock_exit(t_game *game)
 {
-	void	*img;
-	int		ex;
-	int		ey;
-
-	img = NULL;
-	ex = game->map.exit_x;
-	ey = game->map.exit_y;
-	img = game->img.img_exit;
-	mlx_put_image_to_window(game->mlx, game->screen, img, ex * 32, ey * 32);
+	mlx_destroy_image(game->mlx, game->img.img_exit);
+	game->img.img_exit = load_img_file(game, EXIT_IMG);
+	render_images(game);
 }
 
 void	move_elements(int keycode, t_game *game)

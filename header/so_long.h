@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 09:01:50 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 09:01:53 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/09 20:09:41 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ typedef struct s_images
 	void	*img_player;
 	void	*img_free;
 	void	*img_exit;
-	void	*img_exit2;
 }				t_images;
 
 typedef struct s_game
@@ -90,4 +89,5 @@ int		close_game(t_game *game);
 void	render_images(t_game *game);
 int		map_and_validate_elements(t_game *game);
 void	count_elements(t_game *game, char element);
+void	*load_img_file(t_game *game, char *file_path);
 #endif

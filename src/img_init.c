@@ -6,13 +6,13 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:50:55 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/02 08:56:29 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/09 20:09:34 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
 
-static void	*load_img_file(t_game *game, char *file_path)
+void	*load_img_file(t_game *game, char *file_path)
 {
 	void	*img;
 	int		img_width;
@@ -40,11 +40,7 @@ static void	put_img(t_game *game, int x, int y)
 	else if (element == WALL_CHAR)
 		img = game->img.img_wall;
 	else if (element == EXIT_CHAR)
-	{
-		img = game->img.img_exit2;
-		game->map.exit_x = x;
-		game->map.exit_y = y;
-	}
+		img = game->img.img_exit;
 	else if (element == COIN_CHAR)
 		img = game->img.img_coin;
 	else if (element == FREE_CHAR)
@@ -71,8 +67,7 @@ void	img_init(t_game *game)
 {
 	game->img.img_wall = load_img_file(game, WALL_IMG);
 	game->img.img_coin = load_img_file(game, COIN_IMG);
-	game->img.img_exit = load_img_file(game, EXIT_IMG);
-	game->img.img_exit2 = load_img_file(game, EXIT2_IMG);
+	game->img.img_exit = load_img_file(game, EXIT2_IMG);
 	game->img.img_free = load_img_file(game, FREE_IMG);
 	game->img.img_player = load_img_file(game, PLAYER_IMG);
 	render_images(game);
