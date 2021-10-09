@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 07:38:35 by itaureli          #+#    #+#             */
-/*   Updated: 2021/09/19 16:32:54 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/09 20:20:26 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# define	BUFFER_SIZE 1
+# define BUFFER_SIZE 1
+
 char		*get_next_line(int fd);
 void		free_and_reset(void *var);
 ssize_t		read_line(char **holder, char **buffer, char **final_line, int fd);
@@ -35,11 +36,11 @@ void		*ft_memmove(void *dst, const void *src, size_t len);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strchr(const char *s, int c);
-char		*ft_strrchr(const char	*s, int	c);
+char		*ft_strrchr(const char *s, int c);
 void		*ft_memchr(const void *b, int c, size_t len);
 int			ft_memcmp(const void *b1, const void *b2, size_t len);
 char		*ft_strnstr(const char	*big, const char *little, size_t len);
-int			ft_atoi(const	char *nptr);
+int			ft_atoi(const char *nptr);
 void		*ft_calloc(size_t number, size_t size);
 char		*ft_strdup(const char *str);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
