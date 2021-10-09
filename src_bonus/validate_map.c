@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 20:34:48 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/06 06:47:51 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/09 16:21:28 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,6 @@ static int	is_valid_wall(t_game *game)
 	}
 	return (1);
 }
-/*
-static int	is_valid_rectangle(t_game *game)
-{
-	if ((game->map.row < 5) || (game->map.col < 3))
-		return (print_error("Invalid map row or col"));
-	return (1);
-}
-*/
 
 static int	is_valid_elements(t_game *game)
 {
