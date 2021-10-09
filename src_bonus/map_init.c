@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:47:00 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/07 22:16:39 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/10/09 10:56:08 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	map_init(t_game *game)
 	game->map.player_char = 0;
 	game->map.exit_char = 0;
 	game->map.timer = 0;
+	game->map.frame = 1;
 	game->player.count_steps = 0;
 	game->player.count_coins = 0;
 	game->finished = 0;
