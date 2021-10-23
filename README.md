@@ -9,6 +9,8 @@ This project’s objectives are similar to all this first year’s objectives: R
 As a graphic design project, so long will enable you to improve your skills in these
 areas: windows, colors, events, textures, etc
 
+Made with PDF version 1
+
 ## Resources
 
 [minilibx docs](https://harm-smits.github.io/42docs/libs/minilibx)
