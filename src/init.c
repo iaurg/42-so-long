@@ -6,41 +6,11 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/06 21:59:46 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/27 16:38:08 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
-
-/*
-[x] Map components
-[x] Validate map extension .ber
-[x] Validate map walls
-[x] Validate retangular map
-[x] Validate map elements
-[x] You don’t need to check if there’s a valid path in the map.
-[x] Validate Map at least one exit, one collectible, one starting position.
-[x] Init window with right size
-[x] Print sprites on screen
-[x] Close window when click on "X"
-[x] Close window when hit ESC
-[] Validate SIGSERV on game exit (quit the program cleanly.)
-[] Check if all local functions are static
-[] Validate norminette
-[] Add header42
-[] Note the logic inside readme for future read
-
-Move
-[x] Move character (WASD)
-[x] The player must be able to move up,down,left,right
-[x] Player cannot move into walls
-[x] Count coins
-[x] Show steps on terminal
-[x] Collect coins
-[x] At every move the current number of movements must be displayed in the shell.
-[x] Allow exit into sprite E only if collected all C
-[x] Validate invalid_map_wall map
-*/
 
 int	main(int argc, char **argv)
 {
