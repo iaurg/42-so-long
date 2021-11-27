@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:46:20 by itaureli          #+#    #+#             */
-/*   Updated: 2021/11/27 16:21:50 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/27 16:44:11 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_game	game;
 
-	setbuf(stdout, NULL);
 	if (argc != 2)
 		return (print_error("Invalid number of arguments"));
 	if (!is_valid_extension(argv[1]))
