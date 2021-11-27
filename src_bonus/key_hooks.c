@@ -6,13 +6,13 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 22:45:18 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/06 06:47:51 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/27 16:19:46 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long_bonus.h"
 
-int	key_hook(int keycode, t_game *game)
+static int	key_hook(int keycode, t_game *game)
 {
 	if (keycode == KEY_ESC)
 		close_game(game);
