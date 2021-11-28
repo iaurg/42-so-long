@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:50:55 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/09 20:09:34 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/28 12:17:59 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	put_img(t_game *game, int x, int y)
 	mlx_put_image_to_window(game->mlx, game->screen, img, x * 32, y * 32);
 }
 
-void	render_images(t_game *game)
+int	render_images(t_game *game)
 {
 	int	y;
 	int	x;
@@ -61,6 +61,7 @@ void	render_images(t_game *game)
 			put_img(game, x++, y);
 		y++;
 	}
+	return (0);
 }
 
 void	img_init(t_game *game)

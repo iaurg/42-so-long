@@ -6,7 +6,7 @@
 /*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 09:01:50 by itaureli          #+#    #+#             */
-/*   Updated: 2021/10/09 11:34:05 by itaureli         ###   ########.fr       */
+/*   Updated: 2021/11/28 12:16:56 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # define EXIT2_IMG "assets/sprites/E2.xpm"
 # define EVENT_KEY_PRESS	2
 # define EVENT_X_WIN_PRESS	17
+# define EVENT_FOCUS_WIN	9
 
 typedef struct s_player
 {
@@ -89,7 +90,7 @@ int		key_hooks(t_game *game);
 void	move_elements(int keycode, t_game *game);
 void	img_init(t_game *game);
 int		close_game(t_game *game);
-void	render_images(t_game *game);
+int		render_images(t_game *game);
 int		map_and_validate_elements(t_game *game);
 void	count_elements(t_game *game, char element);
 
