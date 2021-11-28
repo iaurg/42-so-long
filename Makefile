@@ -30,7 +30,7 @@ RM = @rm -f
 CC = @clang
 
 CFLAGS = -Wall -Wextra -Werror
-MLX_FLAGS = -L mlx -lmlx -lXext -lX11 -lm -lz
+MLX_FLAGS = -L. -lXext -L. -lX11
 
 SOURCES = $(addprefix $(SOURCE_DIR)/, $(SOURCES_FILES))
 SOURCES_BONUS = $(addprefix $(SOURCE_BONUS_DIR)/, $(SOURCES_BONUS_FILES))
